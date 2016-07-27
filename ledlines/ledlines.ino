@@ -40,8 +40,6 @@ CRGB leds[NUM_LEDS]; // CRGB color object for fastLED library
 void setup () { 
 	FastLED.addLeds<NEOPIXEL, DATA_PIN>(leds, NUM_LEDS);
 
-	Serial.begin(9600);
-
 	// turn on pins for msgeq7
 	pinMode(analogPin, INPUT);
 	pinMode(strobePin, OUTPUT);
@@ -89,6 +87,7 @@ void loop () {
 	        }
 	    }
 
+	    // once all colors of that line are added show line
 	    FastLED.show();
 
 	    // turn off last LED, increment position
