@@ -15,7 +15,7 @@
 #define NUMBEROFLINES 14 // number of LED lines on strip at one time
 #define EIGHTBIT 255
 #define HUESPEED 10 // how fast the hue increments for each LED movement
-#define LEDSPEED 0 // how fast the LED lines move in ms
+#define LEDSPEED 0 // how fast the LED lines move in ms - affects MSGEQ7 reads
 
 int hues[NUMBEROFLINES] = {0,18,36,54,72,91,109,127,145,163,182,200,281,236};
 int positions[NUMBEROFLINES] = {0,7,14,21,28,35,42,49,56,63,70,77,84,90};
