@@ -12,7 +12,7 @@
 #define NUM_LEDS 90
 #define DATA_PIN 5
 #define LINELENGTH 4 // length of each LED line
-#define NUMBEROFLINES 14 // number of LED lines on strip at one  time
+#define NUMBEROFLINES 14 // number of LED lines on strip at one time
 #define EIGHTBIT 255
 #define HUESPEED 10 // how fast the hue increments for each LED movement
 #define LEDSPEED 0 // how fast the LED lines move in ms
@@ -27,9 +27,9 @@ int resetPin = 3; // reset pin of the msgeq7
 int spectrumValue[7]; // array to store the 7 values of the 7 channels
 int resetDelay_USec = 100; // delay of resetting MSGEQ7 in microseconds
 int strobeDelay_USec = 40; // delay to settle input recording in microseconds
-int numberOfChannels = 7; // number of channels in
+int numberOfChannels = 7; // number of channels in MSGEQ7
 
-CRGB leds[NUM_LEDS];
+CRGB leds[NUM_LEDS]; // CRGB color object for fastLED library
 
 
 
