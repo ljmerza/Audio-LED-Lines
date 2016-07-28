@@ -10,11 +10,11 @@
  * Variables
  */
 #define NUM_LEDS 90
-#define DATA_PIN 5
+#define DATA_PIN 5 // data pin to LED strip
 #define LINELENGTH 4 // length of each LED line
 #define NUMBEROFLINES 14 // number of LED lines on strip at one time
 #define EIGHTBIT 255
-#define HUESPEED 10 // how fast the hue increments for each LED movement
+#define HUESPEED 5 // how fast the hue increments for each LED movement
 #define LEDSPEED 0 // how fast the LED lines move in ms - affects MSGEQ7 reads
 
 int hues[NUMBEROFLINES] = {0,18,36,54,72,91,109,127,145,163,182,200,281,236};
@@ -70,11 +70,13 @@ void loop () {
 		delayMicroseconds(strobeDelay_USec); // allows input to settle to get accurate reading
 
 		spectrumValue[i] = analogRead(analogPin); // read value of current pin from msgeq7
-		values[i] = map(spectrumValue[i], 0, 1024, 0, 254); // map analog input to HSV value
-		values[i+numberOfChannels] = map(spectrumValue[i], 0, 1024, 0, 254); // map analog input to HSV value
+		values[i] = map(spectrumValue[1], 0, 1024, 0, EIGHTBIT); // map analog input to HSV value
+		values[i+numberOfChannels] = map(spectrumValue[1], 0, 1024, 0, EIGHTBIT); // map analog input to HSV value
 
 		digitalWrite(strobePin, HIGH); // strobe pin high then low to go to next channel on msgeq7  
 	}
+
+
 
 
     // for each led line
